@@ -35,7 +35,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ktM-Fw-eWC">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ktM-Fw-eWC" customClass="DFPBannerView">
                                 <rect key="frame" x="47" y="428" width="320" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
@@ -56,6 +56,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="bannerView" destination="ktM-Fw-eWC" id="BjX-Vd-cai"/>
                         <outlet property="deeplinkUrl" destination="FZ3-DI-48B" id="cDZ-mo-FdL"/>
                     </connections>
                 </viewController>

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -155,7 +155,6 @@
 				5FFBF56D7806C559875D9338 /* Pods-GoogleAdManagerTestingTests.debug.xcconfig */,
 				30F092AEBCA63A17EF1AC926 /* Pods-GoogleAdManagerTestingTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};

@@ -1,6 +1,27 @@
 import UIKit
 import GoogleMobileAds
 
+protocol ViewControllerDelegate {
+    func addBanner(_ banner: GADNativeCustomTemplateAd)
+}
+
+class AdUnitDelegate: UIViewController, GADNativeCustomTemplateAdLoaderDelegate {
+//    var delegate: ViewControllerDelegate!
+    
+    func adLoader(_ adLoader: GADAdLoader, didFailToReceiveAdWithError error: GADRequestError) {
+        print("@LUIZ - \(error.localizedDescription)")
+    }
+    
+    func nativeCustomTemplateIDs(for adLoader: GADAdLoader) -> [String] {
+        return ["11965647"]
+    }
+    
+    func adLoader(_ adLoader: GADAdLoader, didReceive nativeCustomTemplateAd: GADNativeCustomTemplateAd) {
+        print("@LUIZ - CHEGOU UM BANNER")
+    }
+}
+
+
 class ViewController: UIViewController {
     
     @IBOutlet weak var imageView: UIImageView!
@@ -15,9 +36,10 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         let option = GADNativeAdImageAdLoaderOptions()
         option.shouldRequestMultipleImages = true
-        let adUnit = "/22158792083/teste_ios_simples"
+        let adUnit = "/22158792083/app_nativo/home/carrossel_1/banner_1"
         self.adLoader = GADAdLoader(adUnitID: adUnit, rootViewController: nil, adTypes: [GADAdLoaderAdType.nativeCustomTemplate], options: [option])
-        self.adLoader.delegate = self
+        let delegate0 = AdUnitDelegate()
+        self.adLoader.delegate = delegate0
         self.adLoader.load(DFPRequest())
     }
     

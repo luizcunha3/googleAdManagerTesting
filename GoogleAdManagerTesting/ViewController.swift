@@ -36,11 +36,15 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         let option = GADNativeAdImageAdLoaderOptions()
         option.shouldRequestMultipleImages = true
-        let adUnit = "/22158792083/app_nativo/home/carrossel_1/banner_1"
-        self.adLoader = GADAdLoader(adUnitID: adUnit, rootViewController: nil, adTypes: [GADAdLoaderAdType.nativeCustomTemplate], options: [option])
+        let adUnits = ["/22158792083/app_nativo/home/carrossel_1/banner_1","/22158792083/app_nativo/servicos_financeiros/carrossel_1/banner_1",]
+        let adLoader0 = GADAdLoader(adUnitID: adUnits[0], rootViewController: nil, adTypes: [GADAdLoaderAdType.nativeCustomTemplate], options: [option])
         let delegate0 = AdUnitDelegate()
-        self.adLoader.delegate = delegate0
-        self.adLoader.load(DFPRequest())
+        adLoader0.delegate = delegate0
+        adLoader0.load(DFPRequest())
+        let adLoader1 = GADAdLoader(adUnitID: adUnits[1], rootViewController: nil, adTypes: [GADAdLoaderAdType.nativeCustomTemplate], options: [option])
+        let delegate1 = AdUnitDelegate()
+        adLoader1.delegate = delegate1
+        adLoader1.load(DFPRequest())
     }
     
     @IBAction func clickButton(_ sender: Any) {

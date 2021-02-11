@@ -40,25 +40,24 @@ class ViewController: UIViewController, ViewControllerDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let adUnits = ["/22158792083/app_nativo/home/carrossel_1/banner_1","/22158792083/teste_ios_simples","/22158792083/teste_ios_simples"]
+        let adUnits = ["/22158792083/app_nativo/home/carrossel_1/banner_1",
+        "/22158792083/app_nativo/servicos_financeiros/carrossel_1/banner_1"]
         let adLoader0 = GADAdLoader(adUnitID: adUnits[0], rootViewController: nil, adTypes: [GADAdLoaderAdType.nativeCustomTemplate], options: [])
         let adLoader1 = GADAdLoader(adUnitID: adUnits[1], rootViewController: nil, adTypes: [GADAdLoaderAdType.nativeCustomTemplate], options: [])
-        let adLoader2 = GADAdLoader(adUnitID: adUnits[2], rootViewController: nil, adTypes: [GADAdLoaderAdType.nativeCustomTemplate], options: [])
         
         let delegate0 = AdUnitDelegate()
         delegate0.delegate = self
         let delegate1 = AdUnitDelegate()
         delegate0.delegate = self
-        let delegate2 = AdUnitDelegate()
-        delegate0.delegate = self
+        
         
         adLoader0.delegate = delegate0
         adLoader1.delegate = delegate1
-        adLoader2.delegate = delegate2
+        
         
         adLoader0.load(DFPRequest())
         adLoader1.load(DFPRequest())
-        adLoader2.load(DFPRequest())
+        
     }
     
     @IBAction func clickButton(_ sender: Any) {
